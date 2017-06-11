@@ -1,21 +1,43 @@
-# Lumen PHP Framework
+# Lumen 5 with Codeception
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+In this tutorial, I will show you how to replace default Laravel 5 testing suites with Codeception only.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+*[Read online](https://laravelista.com/lessons/lumen-5-with-codeception)*
 
-## Official Documentation
+## Installation
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+Clone repository to your drive and type in the terminal there:
 
-## Security Vulnerabilities
+```
+composer install
+```
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## Configuration
 
-## License
+Copy file `.env.example` to `.env` file:
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+```
+cp .env.example .env
+```
+
+and change the `APP_KEY` in `.env` to a 32 characters long string.
+
+> If you are lazy, use this `12345678901234567890123456789011`.
+
+## Running
+
+From terminal type:
+
+```
+php -S localhost:8000 -t public
+```
+
+You should get an address to open in your browser like http://localhost:8000.
+
+## Running tests
+
+From terminal type:
+
+```
+vendor/bin/codecept run functional
+```
